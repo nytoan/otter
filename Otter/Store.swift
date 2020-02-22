@@ -34,9 +34,22 @@ protocol FileDelegate: class {
 class File {
     weak var delegate: FileDelegate?
     var url: URL
+    var source: DispatchSourceProtocol?
     
     init(url: URL) {
         self.url = url
+        
+        subscribeToEvents()
+    }
+    
+    func subscribeToEvents() {
+        let fileDescriptor = open(url.path, O_RDONLY)
+        source = DispatchSource.makeFileSystemObjectSource(fileDescriptor: fileDescriptor, eventMask: .all, queue: DispatchQueue.main)
+        source?.setEventHandler {
+            self.read()
+            self.subscribeToEvents()
+        }
+        source?.resume()
     }
     
     func read() {
@@ -50,7 +63,7 @@ class File {
     
     func clear() {
         do {
-            try "".write(to: url, atomically: true, encoding: .utf8)
+            try "".write(to: url, atomically: false, encoding: .utf8)
         } catch {
             print(error)
         }
