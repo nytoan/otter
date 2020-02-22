@@ -33,16 +33,15 @@ protocol FileDelegate: class {
 
 class File {
     weak var delegate: FileDelegate?
-    var path: String?
+    var url: URL
     
-    init(path: String) {
-        self.path = path
+    init(url: URL) {
+        self.url = url
     }
     
     func read() {
-        guard let path = path else { return }
         do {
-            let content = try String(contentsOfFile: path)
+            let content = try String(contentsOf: url)
             delegate?.newContent(content: content)
         } catch {
             print(error)
@@ -50,9 +49,8 @@ class File {
     }
     
     func clear() {
-        guard let path = path else { return }
         do {
-            try "".write(toFile: path, atomically: true, encoding: .utf8)
+            try "".write(to: url, atomically: true, encoding: .utf8)
         } catch {
             print(error)
         }
@@ -72,7 +70,7 @@ class Store: ObservableObject {
     }
     
     var fileName: String? {
-        return file?.path?.components(separatedBy: "/").last
+        return file?.url.path.components(separatedBy: "/").last
     }
     
     init() {
@@ -84,8 +82,8 @@ class Store: ObservableObject {
         file?.clear()
     }
     
-    func chooseFile(path: String) {
-        file = File(path: path)
+    func chooseFile(url: URL) {
+        file = File(url: url)
         file?.delegate = self
         file?.read()
     }

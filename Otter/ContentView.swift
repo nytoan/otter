@@ -24,8 +24,8 @@ struct ContentView: View {
                     let dialog = NSOpenPanel()
                     dialog.allowedFileTypes = ["log"]
                     if dialog.runModal() == .OK {
-                        guard let path = dialog.url?.path else { return }
-                        self.store.chooseFile(path: path)
+                        guard let url = dialog.url else { return }
+                        self.store.chooseFile(url: url)
                     }
                 }
                 Button("Delete") {
