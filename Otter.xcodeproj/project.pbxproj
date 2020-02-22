@@ -12,6 +12,8 @@
 		92434E1924014E8B006B36CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92434E1824014E8B006B36CC /* Assets.xcassets */; };
 		92434E1C24014E8B006B36CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92434E1B24014E8B006B36CC /* Preview Assets.xcassets */; };
 		92434E1F24014E8B006B36CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92434E1D24014E8B006B36CC /* Main.storyboard */; };
+		92434E282401526E006B36CC /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E272401526E006B36CC /* LogsView.swift */; };
+		92434E2C240157F9006B36CC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E2B240157F9006B36CC /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		92434E1E24014E8B006B36CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92434E2024014E8B006B36CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92434E2124014E8B006B36CC /* Otter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Otter.entitlements; sourceTree = "<group>"; };
+		92434E272401526E006B36CC /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		92434E2B240157F9006B36CC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			children = (
 				92434E1424014E87006B36CC /* AppDelegate.swift */,
 				92434E1624014E87006B36CC /* ContentView.swift */,
+				92434E2B240157F9006B36CC /* Store.swift */,
+				92434E272401526E006B36CC /* LogsView.swift */,
 				92434E1824014E8B006B36CC /* Assets.xcassets */,
 				92434E1D24014E8B006B36CC /* Main.storyboard */,
 				92434E2024014E8B006B36CC /* Info.plist */,
@@ -146,7 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92434E1724014E87006B36CC /* ContentView.swift in Sources */,
+				92434E282401526E006B36CC /* LogsView.swift in Sources */,
 				92434E1524014E87006B36CC /* AppDelegate.swift in Sources */,
+				92434E2C240157F9006B36CC /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
