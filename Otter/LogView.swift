@@ -22,7 +22,7 @@ struct LogView: View {
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 10)
-                    Text(log.text)
+                    TextField("", text: .constant(log.text))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                         .background(Color(red: 0.1, green: 0.1, blue: 0.15))

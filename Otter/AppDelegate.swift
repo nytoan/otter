@@ -34,6 +34,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func preference(_ sender: Any) {
+        print("showPreference")
+    }
 
 }
 
