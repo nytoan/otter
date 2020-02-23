@@ -30,7 +30,7 @@ struct LogsView: View {
                     } else {
                         self.openedIndexes.append(log.id)
                     }
-                }.frame(alignment: .trailing)
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()

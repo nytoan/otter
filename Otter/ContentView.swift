@@ -28,9 +28,11 @@ struct ContentView: View {
                         self.store.chooseFile(url: url)
                     }
                 }
-                Button("Delete") {
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                Button("🗑") {
                     self.store.clearLogs()
-                }
+                }.padding()
             }.frame(maxWidth: .infinity)
         }.frame(minWidth: 800, minHeight: 500)
     }
