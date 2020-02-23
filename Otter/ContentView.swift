@@ -16,8 +16,9 @@ struct ContentView: View {
             if store.hasLogs {
                 LogsView(logs: store.logs)
             } else {
-                Text("No logs!")
+                Text(store.fileLoaded ? "No logs" : "No log file loaded")
                     .bold()
+                    .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             HStack() {

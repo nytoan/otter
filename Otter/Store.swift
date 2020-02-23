@@ -100,6 +100,10 @@ class Store: ObservableObject {
         return !logs.isEmpty
     }
     
+    var fileLoaded: Bool {
+        return file != nil
+    }
+    
     var fileName: String? {
         return file?.url.path.components(separatedBy: "/").last
     }
