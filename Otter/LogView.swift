@@ -19,12 +19,15 @@ struct LogView: View {
             VStack {
                 HStack(alignment: .top) {
                     Text(log.title)
+                        .lineLimit(1)
                         .font(.custom("Arial", size: 12))
                     Spacer()
                     Text("\(log.lineCount) lines")
                         .font(.custom("Arial", size: 11))
                 }
+                .frame(minHeight: 30)
                 if isOpen {
+                    Spacer()
                     ScrollView {
                         Text(log.text)
                             .font(.custom("Arial", size: 12))
@@ -35,13 +38,16 @@ struct LogView: View {
                     .background(Color(red: 0.1, green: 0.1, blue: 0.15))
                 }
             }
-            .frame(maxWidth: .infinity)
             Divider()
-            Image("chevron")
-                .rotationEffect(.degrees(
-                    isOpen ? 180 : 0
-                ))
-                .frame(maxHeight: .infinity, alignment: .center)
+            VStack {
+                Image("chevron")
+                    .rotationEffect(.degrees(
+                        isOpen ? 180 : 0
+                    )).frame(minHeight: 30)
+                if isOpen {
+                    Spacer()
+                }
+            }
         }
         .padding(8)
         .background(Color(red: 0.1, green: 0.25, blue: 0.35))
