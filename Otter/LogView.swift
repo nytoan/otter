@@ -17,10 +17,20 @@ struct LogView: View {
     var body: some View {
         HStack {
             if isOpen {
-                Text(log.text)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    Text(log.title)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, 10)
+                    Text(log.text)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background(Color(red: 0.1, green: 0.1, blue: 0.15))
+                        .cornerRadius(4)
+                }
             } else {
                 Text(log.title)
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Divider()
@@ -36,6 +46,7 @@ struct LogView: View {
         .onTapGesture {
             self.isOpen = !self.isOpen
         }
+        .cornerRadius(4)
     }
 }
 

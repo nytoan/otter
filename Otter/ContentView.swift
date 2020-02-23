@@ -16,11 +16,12 @@ struct ContentView: View {
             if store.hasLogs {
                 LogsView(logs: store.logs)
             } else {
-                Text("Hello, World!")
+                Text("No logs!")
+                    .bold()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             HStack() {
-                Button(store.fileName ?? "Log file") {
+                Button(store.fileName ?? "Choose log file") {
                     let dialog = NSOpenPanel()
                     dialog.allowedFileTypes = ["log"]
                     if dialog.runModal() == .OK {

@@ -30,7 +30,7 @@ class LogParser {
             }
             currentLogContent += line.replacingOccurrences(of: otterTag, with: "") + "\n"
         }
-        return logs
+        return logs.reversed()
     }
     
 }
