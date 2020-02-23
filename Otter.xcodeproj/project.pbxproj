@@ -14,6 +14,7 @@
 		92434E1F24014E8B006B36CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92434E1D24014E8B006B36CC /* Main.storyboard */; };
 		92434E282401526E006B36CC /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E272401526E006B36CC /* LogsView.swift */; };
 		92434E2C240157F9006B36CC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E2B240157F9006B36CC /* Store.swift */; };
+		92434E302402199D006B36CC /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E2F2402199D006B36CC /* LogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		92434E2124014E8B006B36CC /* Otter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Otter.entitlements; sourceTree = "<group>"; };
 		92434E272401526E006B36CC /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		92434E2B240157F9006B36CC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		92434E2F2402199D006B36CC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				92434E1624014E87006B36CC /* ContentView.swift */,
 				92434E2B240157F9006B36CC /* Store.swift */,
 				92434E272401526E006B36CC /* LogsView.swift */,
+				92434E2F2402199D006B36CC /* LogView.swift */,
 				92434E1824014E8B006B36CC /* Assets.xcassets */,
 				92434E1D24014E8B006B36CC /* Main.storyboard */,
 				92434E2024014E8B006B36CC /* Info.plist */,
@@ -154,6 +157,7 @@
 				92434E1724014E87006B36CC /* ContentView.swift in Sources */,
 				92434E282401526E006B36CC /* LogsView.swift in Sources */,
 				92434E1524014E87006B36CC /* AppDelegate.swift in Sources */,
+				92434E302402199D006B36CC /* LogView.swift in Sources */,
 				92434E2C240157F9006B36CC /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
