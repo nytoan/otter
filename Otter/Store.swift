@@ -11,11 +11,24 @@ import Combine
     
 class LogParser {
     func generateLogs(string: String) -> [Log] {
-        var i = -1
-        return string.components(separatedBy: "\n").map {
-            i += 1
-            return Log(id: i, text: $0)
+        
+        var logs: [Log] = []
+        var currentLogContent = ""
+        var i = 0
+        for line in string.components(separatedBy: "\n") {
+            if line.contains("[otter]") && !currentLogContent.isEmpty {
+                logs.append(
+                    Log(
+                        id: i, 
+                        text: currentLogContent
+                    )
+                )
+                i += 1
+                currentLogContent = ""
+            }
+            currentLogContent += line + "\n"
         }
+        return logs
     }
     
 }

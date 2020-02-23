@@ -13,7 +13,17 @@ struct LogsView: View {
     
     var body: some View {
         List(logs) { log in
-            Text(log.text)
+            HStack {
+                Text(log.text)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
+                Button("toggle") {
+                    
+                }.frame(alignment: .trailing)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color(red: 0.1, green: 0.3, blue: 0.4))
         }
     }
 }
@@ -21,10 +31,18 @@ struct LogsView: View {
 struct LogsView_Previews: PreviewProvider {
     static var previews: some View {
         LogsView(logs: [
-            Log(id: 0, text: "[ 200 ] - https://www.efgoisder.com/tokens"),
-            Log(id: 1, text: "[ 200 ] - https://www.efgoisder.com/tokens"),
-            Log(id: 2, text: "[ 200 ] - https://www.efgoisder.com/tokens"),
-            Log(id: 3, text: "[ 200 ] - https://www.efgoisder.com/tokens"),
+            Log(
+                id: 0, 
+                text: "[ 200 ] - https://www.efgoisder.com/tokens"
+            ),
+            Log(
+                id: 1, 
+                text: "[ 200 ] - https://www.efgoisder.com/tokens"
+            ),
+            Log(
+                id: 2, 
+                text: "[ 200 ] - https://www.efgoisder.com/tokens"
+            )
         ])
     }
 }
