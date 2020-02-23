@@ -20,7 +20,7 @@ struct LogView: View {
                 HStack(alignment: .top) {
                     Text(log.title)
                         .font(.custom("Arial", size: 12))
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                    Spacer()
                     Text("\(log.lineCount) lines")
                         .font(.custom("Arial", size: 11))
                 }
@@ -35,6 +35,7 @@ struct LogView: View {
                     .background(Color(red: 0.1, green: 0.1, blue: 0.15))
                 }
             }
+            .frame(maxWidth: .infinity)
             Divider()
             Image("chevron")
                 .rotationEffect(.degrees(
