@@ -8,6 +8,34 @@
 
 import SwiftUI
 
+class CustomTextView: NSTextView {
+  override var intrinsicContentSize: NSSize {
+    guard let manager = textContainer?.layoutManager else {
+      return .zero
+    }
+
+    manager.ensureLayout(for: textContainer!)
+
+    return manager.usedRect(for: textContainer!).size
+  }
+}
+
+struct TextView: NSViewRepresentable {
+    var text: String
+    
+    func updateNSView(_ nsView: CustomTextView, context: NSViewRepresentableContext<TextView>) {
+        nsView.string = text
+    }
+    
+    func makeNSView(context: NSViewRepresentableContext<TextView>) -> CustomTextView {
+        let tv = CustomTextView(frame: .zero)
+        tv.setContentHuggingPriority(.required, for: .horizontal)
+        tv.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        tv.backgroundColor = .clear
+        return tv
+    }
+}
+
 struct LogView: View {
     
     var log: Log
@@ -29,9 +57,8 @@ struct LogView: View {
                 if isOpen {
                     Spacer()
                     ScrollView {
-                        Text(log.text)
-                            .font(.custom("Arial", size: 12))
-                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                        TextView(text: log.text)
+                            .frame(maxWidth: .infinity)
                     }
                     .frame(maxHeight: 300)
                     .padding()
