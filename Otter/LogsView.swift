@@ -11,14 +11,25 @@ import SwiftUI
 struct LogsView: View {
     var logs: [Log]
     
+    @State private var openedIndexes: [Int] = []
+    
     var body: some View {
         List(logs) { log in
             HStack {
-                Text(log.title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                if self.openedIndexes.contains(log.id) {
+                    Text(log.text)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    Text(log.title)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
                 Divider()
                 Button("toggle") {
-                    
+                    if self.openedIndexes.contains(log.id) {
+                        self.openedIndexes = self.openedIndexes.filter { $0 != log.id }
+                    } else {
+                        self.openedIndexes.append(log.id)
+                    }
                 }.frame(alignment: .trailing)
             }
             .frame(maxWidth: .infinity)

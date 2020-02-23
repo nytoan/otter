@@ -16,7 +16,7 @@ class LogParser {
         
         var logs: [Log] = []
         var currentLogContent = ""
-        var i = 0
+        var i = 1
         for line in string.components(separatedBy: "\n") {
             if line.contains(otterTag) && !currentLogContent.isEmpty {
                 logs.append(
