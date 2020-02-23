@@ -35,6 +35,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Copy" id="9Ux-xn-lIn">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Copy" id="CnE-wy-nt5">
+                                    <items>
+                                        <menuItem title="Copy" keyEquivalent="c" id="LWw-rp-4jZ">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="8P3-yU-2Dp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Cut" keyEquivalent="x" id="xuc-yJ-JId">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="Ygk-Xi-6Qy"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
