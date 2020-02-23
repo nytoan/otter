@@ -17,19 +17,22 @@ struct LogView: View {
     var body: some View {
         HStack {
             VStack {
-                Text(log.title)
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.bottom, isOpen ? 10 : 0)
+                HStack(alignment: .top) {
+                    Text(log.title)
+                        .font(.custom("Arial", size: 12))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                    Text("\(log.lineCount) lines")
+                        .font(.custom("Arial", size: 11))
+                }
                 if isOpen {
                     ScrollView {
                         Text(log.text)
+                            .font(.custom("Arial", size: 14))
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                     }
                     .frame(maxHeight: 300)
                     .padding()
                     .background(Color(red: 0.1, green: 0.1, blue: 0.15))
-                    .cornerRadius(4)
                 }
             }
             Divider()
@@ -37,12 +40,11 @@ struct LogView: View {
                 .rotationEffect(.degrees(
                     isOpen ? 180 : 0
                 ))
-                .frame(maxHeight: .infinity, alignment: .top)
+                .frame(maxHeight: .infinity, alignment: .center)
         }
-        .padding()
+        .padding(8)
         .background(Color(red: 0.1, green: 0.3, blue: 0.4))
-        .cornerRadius(4)
-        .padding(EdgeInsets(top: 4, leading: 4, bottom: 0, trailing: 4))
+        .padding(EdgeInsets(top: 2, leading: 2, bottom: 0, trailing: 2))
         .onTapGesture {
             self.isOpen = !self.isOpen
         }

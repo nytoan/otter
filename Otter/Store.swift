@@ -41,6 +41,9 @@ struct Log: Identifiable {
     var title: String {
         return text.components(separatedBy: "\n").first ?? ""
     }
+    var lineCount: Int {
+        return text.components(separatedBy: "\n").count
+    }
     
 }
 
