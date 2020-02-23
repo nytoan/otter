@@ -24,17 +24,22 @@ struct LogsView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 Divider()
-                Button("toggle") {
-                    if self.openedIndexes.contains(log.id) {
-                        self.openedIndexes = self.openedIndexes.filter { $0 != log.id }
-                    } else {
-                        self.openedIndexes.append(log.id)
-                    }
-                }
+                Image("chevron")
+                    .rotationEffect(.degrees(
+                        self.openedIndexes.contains(log.id) ? 180 : 0
+                    ))
+                    .frame(maxHeight: .infinity, alignment: .topLeading)
             }
             .frame(maxWidth: .infinity)
             .padding()
             .background(Color(red: 0.1, green: 0.3, blue: 0.4))
+            .onTapGesture {
+                if self.openedIndexes.contains(log.id) {
+                    self.openedIndexes = self.openedIndexes.filter { $0 != log.id }
+                } else {
+                    self.openedIndexes.append(log.id)
+                }
+            }
         }
     }
 }
