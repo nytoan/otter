@@ -30,8 +30,8 @@ struct ContentView: View {
                         self.store.chooseFile(url: url)
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
+                Spacer()
                 Button("🗑") {
                     self.store.clearLogs()
                 }.padding()
