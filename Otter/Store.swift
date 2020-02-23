@@ -12,11 +12,13 @@ import Combine
 class LogParser {
     func generateLogs(string: String) -> [Log] {
         
+        let otterTag = "[otter]"
+        
         var logs: [Log] = []
         var currentLogContent = ""
         var i = 0
         for line in string.components(separatedBy: "\n") {
-            if line.contains("[otter]") && !currentLogContent.isEmpty {
+            if line.contains(otterTag) && !currentLogContent.isEmpty {
                 logs.append(
                     Log(
                         id: i, 
@@ -26,7 +28,7 @@ class LogParser {
                 i += 1
                 currentLogContent = ""
             }
-            currentLogContent += line + "\n"
+            currentLogContent += line.replacingOccurrences(of: otterTag, with: "") + "\n"
         }
         return logs
     }
@@ -36,6 +38,9 @@ class LogParser {
 struct Log: Identifiable {
     var id: Int
     var text: String
+    var title: String {
+        return text.components(separatedBy: "\n").first ?? ""
+    }
     
 }
 

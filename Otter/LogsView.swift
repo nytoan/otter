@@ -14,7 +14,7 @@ struct LogsView: View {
     var body: some View {
         List(logs) { log in
             HStack {
-                Text(log.text)
+                Text(log.title)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
                 Button("toggle") {
