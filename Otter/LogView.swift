@@ -27,7 +27,7 @@ struct LogView: View {
                 if isOpen {
                     ScrollView {
                         Text(log.text)
-                            .font(.custom("Arial", size: 14))
+                            .font(.custom("Arial", size: 12))
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                     }
                     .frame(maxHeight: 300)
@@ -43,8 +43,8 @@ struct LogView: View {
                 .frame(maxHeight: .infinity, alignment: .center)
         }
         .padding(8)
-        .background(Color(red: 0.1, green: 0.3, blue: 0.4))
-        .padding(EdgeInsets(top: 2, leading: 2, bottom: 0, trailing: 2))
+        .background(Color(red: 0.1, green: 0.25, blue: 0.35))
+        .padding(-2)
         .onTapGesture {
             self.isOpen = !self.isOpen
         }
