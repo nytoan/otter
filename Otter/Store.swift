@@ -59,6 +59,8 @@ class File {
     
     init(url: URL) {
         self.url = url
+        
+        subscribeToEvents()
     }
     
     func subscribeToEvents() {
