@@ -25,7 +25,6 @@
 		92434E1B24014E8B006B36CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92434E1E24014E8B006B36CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92434E2024014E8B006B36CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92434E2124014E8B006B36CC /* Otter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Otter.entitlements; sourceTree = "<group>"; };
 		92434E272401526E006B36CC /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		92434E2B240157F9006B36CC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		92434E2F2402199D006B36CC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -69,7 +68,6 @@
 				92434E1824014E8B006B36CC /* Assets.xcassets */,
 				92434E1D24014E8B006B36CC /* Main.storyboard */,
 				92434E2024014E8B006B36CC /* Info.plist */,
-				92434E2124014E8B006B36CC /* Otter.entitlements */,
 				92434E1A24014E8B006B36CC /* Preview Content */,
 			);
 			path = Otter;
@@ -293,7 +291,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Otter/Otter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Otter/Preview Content\"";
@@ -316,7 +313,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Otter/Otter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Otter/Preview Content\"";

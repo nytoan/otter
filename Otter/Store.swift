@@ -59,8 +59,6 @@ class File {
     
     init(url: URL) {
         self.url = url
-        
-        subscribeToEvents()
     }
     
     func subscribeToEvents() {
@@ -114,6 +112,9 @@ class Store: ObservableObject {
     init() {
         logs = []
         parser = LogParser()
+        
+        guard let url = UserDefaults.standard.url(forKey: "url") else { return }
+        chooseFile(url: url)
     }
     
     func clearLogs() {
@@ -122,6 +123,11 @@ class Store: ObservableObject {
     
     func chooseFile(url: URL) {
         file = File(url: url)
+        
+        guard file != nil else { return }
+        
+        UserDefaults.standard.set(url, forKey: "url")
+        
         file?.delegate = self
         file?.read()
     }
