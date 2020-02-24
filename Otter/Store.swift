@@ -11,24 +11,36 @@ import Combine
     
 class LogParser {
     func generateLogs(string: String) -> [Log] {
-        
-        let otterTag = "[otter]"
+        let otterOpenTag = "[otter]"
+        let otterCloseTag = "[/otter]"
         
         var logs: [Log] = []
         var currentLogContent = ""
-        var i = 1
+        var waitForCloseTag: Bool = false
+        
         for line in string.components(separatedBy: "\n") {
-            if line.contains(otterTag) && !currentLogContent.isEmpty {
-                logs.append(
-                    Log(
-                        id: i, 
-                        text: currentLogContent
+            if line.contains(otterOpenTag) {
+                if waitForCloseTag {
+                    currentLogContent += line + "\n"
+                } else {
+                    currentLogContent = ""
+                    waitForCloseTag = true
+                }
+            } else if line.contains(otterCloseTag) {
+                if waitForCloseTag {
+                    logs.append(
+                        Log(
+                            id: logs.count, 
+                            text: currentLogContent
+                        )
                     )
-                )
-                i += 1
-                currentLogContent = ""
+                    waitForCloseTag = false
+                }
+            } else {
+                if waitForCloseTag {
+                    currentLogContent += line + "\n"
+                }
             }
-            currentLogContent += line.replacingOccurrences(of: otterTag, with: "") + "\n"
         }
         return logs.reversed()
     }
