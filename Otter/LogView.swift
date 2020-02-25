@@ -8,32 +8,25 @@
 
 import SwiftUI
 
-class CustomTextView: NSTextView {
-  override var intrinsicContentSize: NSSize {
-    guard let manager = textContainer?.layoutManager else {
-      return .zero
+extension Color {
+    static func getColorFromLog(log: Log) -> Color {
+        
+        for param in log.params {
+            if case let .color(hexString) = param {
+                let mask = 0x000000FF
+                let scanner = Scanner(string: hexString)
+                var color: UInt64 = 0
+                scanner.scanHexInt64(&color)
+                let r: Double = Double(Int(color >> 16) & mask) / 255.0
+                let g: Double = Double(Int(color >> 8) & mask) / 255.0
+                let b: Double = Double(Int(color) & mask) / 255.0
+                return Color(red: r, green: g, blue: b)                
+            }
+        }
+        
+        return Color(red: 0.1, green: 0.25, blue: 0.35)
     }
-
-    manager.ensureLayout(for: textContainer!)
-
-    return manager.usedRect(for: textContainer!).size
-  }
-}
-
-struct TextView: NSViewRepresentable {
-    var text: String
     
-    func updateNSView(_ nsView: CustomTextView, context: NSViewRepresentableContext<TextView>) {
-        nsView.string = text
-    }
-    
-    func makeNSView(context: NSViewRepresentableContext<TextView>) -> CustomTextView {
-        let tv = CustomTextView(frame: .zero)
-        tv.setContentHuggingPriority(.required, for: .horizontal)
-        tv.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        tv.backgroundColor = .clear
-        return tv
-    }
 }
 
 struct LogView: View {
@@ -77,7 +70,7 @@ struct LogView: View {
             }
         }
         .padding(8)
-        .background(Color(red: 0.1, green: 0.25, blue: 0.35))
+        .background(Color.getColorFromLog(log: log))
         .padding(-2)
         .onTapGesture {
             self.isOpen = !self.isOpen

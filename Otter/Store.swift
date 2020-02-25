@@ -10,46 +10,69 @@ import Foundation
 import Combine
     
 class LogParser {
+    let otterOpenTag = "[otter"
+    let otterCloseTag = "[/otter]"
+    
     func generateLogs(string: String) -> [Log] {
-        let otterOpenTag = "[otter]"
-        let otterCloseTag = "[/otter]"
         
-        var logs: [Log] = []
-        var currentLogContent = ""
-        var waitForCloseTag: Bool = false
+        var logs: [Log?] = []
+        var currentLog: Log?
         
         for line in string.components(separatedBy: "\n") {
             if line.contains(otterOpenTag) {
-                if waitForCloseTag {
-                    currentLogContent += line + "\n"
+                if currentLog != nil {
+                    currentLog?.text += line + "\n"
                 } else {
-                    currentLogContent = ""
-                    waitForCloseTag = true
+                    currentLog = Log(
+                        id: logs.count, 
+                        text: "",
+                        params: getOpenTagParams(string: line)
+                    )
                 }
             } else if line.contains(otterCloseTag) {
-                if waitForCloseTag {
-                    logs.append(
-                        Log(
-                            id: logs.count, 
-                            text: currentLogContent
-                        )
-                    )
-                    waitForCloseTag = false
+                if currentLog != nil {
+                    logs.append(currentLog)
+                    currentLog = nil
                 }
             } else {
-                if waitForCloseTag {
-                    currentLogContent += line + "\n"
+                if currentLog != nil {
+                    currentLog?.text += line + "\n"
                 }
             }
         }
-        return logs.reversed()
+        return logs.compactMap{$0}.reversed()
+    }
+    
+    private func getOpenTagParams(string: String) -> [Log.Parameter] {
+        return string
+            .trimmingCharacters(in: .whitespaces)
+            .replacingOccurrences(of: "[otter]", with: "")
+            .replacingOccurrences(of: "[otter ", with: "")
+            .replacingOccurrences(of: "]", with: "")
+            .components(separatedBy: .whitespaces)
+            .filter { !$0.isEmpty }
+            .map { param in
+                let arr = param.components(separatedBy: "=")
+                let key = arr[0]
+                let value:String = String(arr[1].dropFirst().dropLast())
+                if key == "color" {
+                    return Log.Parameter.color(string: value)
+                }
+                return nil
+        }.compactMap{$0}
     }
     
 }
 
 struct Log: Identifiable {
+    enum Parameter: Equatable {
+        case color(string: String)
+    }
+    
     var id: Int
     var text: String
+    var params: [Parameter] = []
+    
     var title: String {
         return text.components(separatedBy: "\n").first ?? ""
     }

@@ -16,6 +16,9 @@
 		92434E2C240157F9006B36CC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E2B240157F9006B36CC /* Store.swift */; };
 		92434E302402199D006B36CC /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92434E2F2402199D006B36CC /* LogView.swift */; };
 		92439B132403EF2D0068744A /* OtterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B122403EF2D0068744A /* OtterTests.swift */; };
+		92439B1B24057C030068744A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B1A24057C030068744A /* main.swift */; };
+		92439B23240585290068744A /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B22240585290068744A /* TestAppDelegate.swift */; };
+		92439B2524058BCF0068744A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B2424058BCF0068744A /* TextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		92439B102403EF2D0068744A /* OtterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92439B122403EF2D0068744A /* OtterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterTests.swift; sourceTree = "<group>"; };
 		92439B142403EF2D0068744A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92439B1A24057C030068744A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		92439B22240585290068744A /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
+		92439B2424058BCF0068744A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 				92434E2B240157F9006B36CC /* Store.swift */,
 				92434E272401526E006B36CC /* LogsView.swift */,
 				92434E2F2402199D006B36CC /* LogView.swift */,
+				92439B2424058BCF0068744A /* TextView.swift */,
+				92439B1A24057C030068744A /* main.swift */,
 				92434E1824014E8B006B36CC /* Assets.xcassets */,
 				92434E1D24014E8B006B36CC /* Main.storyboard */,
 				92434E2024014E8B006B36CC /* Info.plist */,
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				92439B122403EF2D0068744A /* OtterTests.swift */,
+				92439B22240585290068744A /* TestAppDelegate.swift */,
 				92439B142403EF2D0068744A /* Info.plist */,
 			);
 			path = OtterTests;
@@ -216,6 +225,8 @@
 			files = (
 				92434E1724014E87006B36CC /* ContentView.swift in Sources */,
 				92434E282401526E006B36CC /* LogsView.swift in Sources */,
+				92439B1B24057C030068744A /* main.swift in Sources */,
+				92439B2524058BCF0068744A /* TextView.swift in Sources */,
 				92434E1524014E87006B36CC /* AppDelegate.swift in Sources */,
 				92434E302402199D006B36CC /* LogView.swift in Sources */,
 				92434E2C240157F9006B36CC /* Store.swift in Sources */,
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92439B23240585290068744A /* TestAppDelegate.swift in Sources */,
 				92439B132403EF2D0068744A /* OtterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
