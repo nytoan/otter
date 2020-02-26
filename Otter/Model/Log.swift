@@ -20,6 +20,9 @@ struct Log: Identifiable {
     var title: String {
         return text.components(separatedBy: "\n").first ?? ""
     }
+    var content: String {
+        return text.components(separatedBy: "\n").dropFirst().reduce("") { $0 + $1 + "\n" }
+    }
     var lineCount: Int {
         return text.components(separatedBy: "\n").count
     }

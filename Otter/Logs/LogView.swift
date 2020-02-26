@@ -18,7 +18,8 @@ struct LogView: View {
         HStack {
             Rectangle()
                 .fill(Color.getColorFromLog(log: log))
-                .frame(width: 8)
+                .frame(width: 6)
+                .cornerRadius(3)
             VStack {
                 HStack(alignment: .top) {
                     Text(log.title)
@@ -31,7 +32,7 @@ struct LogView: View {
                 .frame(minHeight: 24)
                 if isOpen {
                     ScrollView {
-                        TextView(text: log.text)
+                        TextView(text: log.content)
                             .frame(maxWidth: .infinity)
                     }
                     .frame(maxHeight: 400)
