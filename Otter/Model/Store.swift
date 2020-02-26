@@ -13,6 +13,12 @@ class Store: ObservableObject {
     @Published var logs: [Log]
     @Published var file: File?
     
+    @Published var searchString: String = "" {
+        didSet {
+            print("ok")
+        }
+    }
+    
     private var parser: LogParser
     
     var hasLogs: Bool {

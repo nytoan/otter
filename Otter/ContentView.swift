@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            TopBar()
+            TopBar(searchString: $store.searchString)
             if store.hasLogs {
                 LogsView(logs: store.logs)
             } else {

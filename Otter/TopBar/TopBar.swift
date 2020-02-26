@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TopBar: View {
     
-    @State var searchString: String = ""
+    @Binding var searchString: String
     
     var body: some View {
         TextField("Search", text: $searchString)
@@ -19,7 +19,9 @@ struct TopBar: View {
 }
 
 struct TopBar_Previews: PreviewProvider {
+    @State static var test = ""
+    
     static var previews: some View {
-        TopBar()
+        TopBar(searchString: $test)
     }
 }
