@@ -15,7 +15,7 @@ struct ContentView: View {
         VStack {
             TopBar(searchString: $store.searchString)
             if store.hasLogs {
-                LogsView(logs: store.logs)
+                LogsView(logs: store.logList)
             } else {
                 Text(store.fileLoaded ? "No logs" : "No log file loaded")
                     .bold()

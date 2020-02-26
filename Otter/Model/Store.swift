@@ -13,10 +13,10 @@ class Store: ObservableObject {
     @Published var logs: [Log]
     @Published var file: File?
     
-    @Published var searchString: String = "" {
-        didSet {
-            print("ok")
-        }
+    @Published var searchString: String = ""
+    
+    var logList: [Log] {
+        return LogParser().search(query: searchString, in: logs)
     }
     
     private var parser: LogParser

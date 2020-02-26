@@ -61,4 +61,9 @@ class LogParser {
         }.compactMap{$0}
     }
     
+    func search(query: String, in logList: [Log]) -> [Log] {
+        guard !query.isEmpty else { return logList }
+        return logList.filter { $0.text.contains(query) }
+    }
+    
 }

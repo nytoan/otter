@@ -98,4 +98,34 @@ class OtterTests: XCTestCase {
         XCTAssertEqual(true, logs.first?.params.contains(Log.Parameter.color(string: "ff0000")))
     }
 
+    func testLogSearch() {
+        let string = """
+        [otter color="ff0000"]
+        bla bla
+        [/otter]
+        [otter color="ff0000"]
+        bla blou
+        [/otter]
+        """
+        
+        let logs = LogParser().generateLogs(string: string)
+        let filteredLogs = LogParser().search(query: "blou", in: logs)
+        XCTAssertEqual(filteredLogs.count, 1)
+    }
+    
+    func testLogSearchEmpty() {
+        let string = """
+        [otter color="ff0000"]
+        bla bla
+        [/otter]
+        [otter color="ff0000"]
+        bla blou
+        [/otter]
+        """
+        
+        let logs = LogParser().generateLogs(string: string)
+        let filteredLogs = LogParser().search(query: "", in: logs)
+        XCTAssertEqual(filteredLogs.count, 2)
+    }
+    
 }
