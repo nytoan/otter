@@ -21,6 +21,7 @@ struct TopBar: View {
             .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
             .disableAutocorrection(true)
     }
+    
 }
 
 struct TopBar_Previews: PreviewProvider {
@@ -30,4 +31,5 @@ struct TopBar_Previews: PreviewProvider {
         TopBar(searchString: $test)
         .frame(width: 200, height: 80)
     }
+    
 }
