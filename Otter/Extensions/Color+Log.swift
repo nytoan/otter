@@ -24,7 +24,7 @@ extension Color {
             }
         }
         
-        return Color(red: 0.1, green: 0.25, blue: 0.35)
+        return Color(NSColor(named: "defaultBar")!)
     }
     
 }

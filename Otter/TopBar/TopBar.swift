@@ -14,7 +14,12 @@ struct TopBar: View {
     
     var body: some View {
         TextField("Search", text: $searchString)
+            .textFieldStyle(PlainTextFieldStyle())
+            .padding(8)
+            .background(Color(NSColor(named: "textFieldBackground")!))
+            .cornerRadius(4)
             .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
+            .disableAutocorrection(true)
     }
 }
 
@@ -23,5 +28,6 @@ struct TopBar_Previews: PreviewProvider {
     
     static var previews: some View {
         TopBar(searchString: $test)
+        .frame(width: 200, height: 80)
     }
 }
