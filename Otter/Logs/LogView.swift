@@ -15,52 +15,45 @@ struct LogView: View {
     @State var isOpen: Bool = false
     
     var body: some View {
-        VStack {
-            HStack {
-                Rectangle()
-                    .fill(Color.getColorFromLog(log: log))
-                    .frame(width: 4)
-                VStack {
-                    HStack(alignment: .top) {
-                        Text(log.title)
-                            .lineLimit(1)
-                            .font(Font.system(size: 12, weight: .regular, design: .monospaced))
-                        Spacer()
-                        Text("\(log.lineCount) lines")
-                            .font(.custom("HelveticaNeue-MediumItalic", size: 11))
-                    }
-                    .frame(minHeight: 30)
-                    if isOpen {
-                        Spacer()
-                        ScrollView {
-                            TextView(text: log.text)
-                                .frame(maxWidth: .infinity)
-                        }
-                        .frame(height: 300)
-                        .padding()
-                        .background(Color(Constants.Color.backgroundLog))
-                        .cornerRadius(2)
-                        Spacer()
-                    }
+        HStack {
+            Rectangle()
+                .fill(Color.getColorFromLog(log: log))
+                .frame(width: 8)
+            VStack {
+                HStack(alignment: .top) {
+                    Text(log.title)
+                        .lineLimit(1)
+                        .font(Font.system(size: 12, weight: .regular, design: .monospaced))
+                    Spacer()
+                    Text("\(log.lineCount) lines")
+                        .font(.custom("HelveticaNeue-MediumItalic", size: 11))
                 }
-                Divider()
-                VStack {
-                    Image("chevron")
-                        .rotationEffect(.degrees(
-                            isOpen ? 180 : 0
-                        )).frame(minHeight: 30)
-                    if isOpen {
-                        Spacer()
+                .frame(minHeight: 24)
+                if isOpen {
+                    ScrollView {
+                        TextView(text: log.text)
+                            .frame(maxWidth: .infinity)
                     }
+                    .frame(maxHeight: 400)
+                    .padding()
+                    .background(Color(Constants.Color.backgroundLog))
+                    .cornerRadius(4)
                 }
             }
-            .padding([.top, .bottom], 4)
-            .padding([.leading, .trailing], 2)
-            .background(Color.init(white: 0).opacity(0.01))
-            .onTapGesture {
-                self.isOpen = !self.isOpen
+            Divider()
+            VStack {
+                Image("chevron")
+                    .rotationEffect(.degrees(
+                        isOpen ? 180 : 0
+                    )).frame(minHeight: 24)
+                if isOpen {
+                    Spacer()
+                }
             }
-            Divider().padding([.top], isOpen ? 8 : 0)
+        }
+        .background(Color.init(white: 0).opacity(0.01))
+        .onTapGesture {
+            self.isOpen = !self.isOpen
         }
     }
 }
