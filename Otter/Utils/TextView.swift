@@ -29,6 +29,9 @@ struct TextView: NSViewRepresentable {
     
     func makeNSView(context: NSViewRepresentableContext<TextView>) -> CustomTextView {
         let tv = CustomTextView(frame: .zero)
+        tv.isEditable = false
+        tv.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .regular)
+        tv.textColor = .init(white: 0.9, alpha: 1)
         tv.setContentHuggingPriority(.required, for: .horizontal)
         tv.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         tv.backgroundColor = .clear

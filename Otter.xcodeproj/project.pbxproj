@@ -19,6 +19,12 @@
 		92439B1B24057C030068744A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B1A24057C030068744A /* main.swift */; };
 		92439B23240585290068744A /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B22240585290068744A /* TestAppDelegate.swift */; };
 		92439B2524058BCF0068744A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B2424058BCF0068744A /* TextView.swift */; };
+		92439B27240684010068744A /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B26240684010068744A /* TopBar.swift */; };
+		92439B292406846D0068744A /* Color+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B282406846D0068744A /* Color+Log.swift */; };
+		92439B2B2406855A0068744A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B2A2406855A0068744A /* Constants.swift */; };
+		92439B2E2406A7DC0068744A /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B2D2406A7DC0068744A /* LogParser.swift */; };
+		92439B322406A7F00068744A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B312406A7F00068744A /* Log.swift */; };
+		92439B342406A7FE0068744A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B332406A7FE0068744A /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		92439B1A24057C030068744A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		92439B22240585290068744A /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		92439B2424058BCF0068744A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		92439B26240684010068744A /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		92439B282406846D0068744A /* Color+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Log.swift"; sourceTree = "<group>"; };
+		92439B2A2406855A0068744A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92439B2D2406A7DC0068744A /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
+		92439B312406A7F00068744A /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		92439B332406A7FE0068744A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +101,13 @@
 		92434E1324014E87006B36CC /* Otter */ = {
 			isa = PBXGroup;
 			children = (
-				92434E1424014E87006B36CC /* AppDelegate.swift */,
+				92439B372406A82A0068744A /* Utils */,
+				92439B362406A8220068744A /* Extensions */,
+				92439B352406A81B0068744A /* TopBar */,
+				92439B2C2406A7C90068744A /* Model */,
+				92439B382406A83B0068744A /* Logs */,
 				92434E1624014E87006B36CC /* ContentView.swift */,
-				92434E2B240157F9006B36CC /* Store.swift */,
-				92434E272401526E006B36CC /* LogsView.swift */,
-				92434E2F2402199D006B36CC /* LogView.swift */,
-				92439B2424058BCF0068744A /* TextView.swift */,
+				92434E1424014E87006B36CC /* AppDelegate.swift */,
 				92439B1A24057C030068744A /* main.swift */,
 				92434E1824014E8B006B36CC /* Assets.xcassets */,
 				92434E1D24014E8B006B36CC /* Main.storyboard */,
@@ -120,6 +133,51 @@
 				92439B142403EF2D0068744A /* Info.plist */,
 			);
 			path = OtterTests;
+			sourceTree = "<group>";
+		};
+		92439B2C2406A7C90068744A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92434E2B240157F9006B36CC /* Store.swift */,
+				92439B2D2406A7DC0068744A /* LogParser.swift */,
+				92439B332406A7FE0068744A /* File.swift */,
+				92439B312406A7F00068744A /* Log.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92439B352406A81B0068744A /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				92439B26240684010068744A /* TopBar.swift */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		92439B362406A8220068744A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				92439B282406846D0068744A /* Color+Log.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		92439B372406A82A0068744A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				92439B2424058BCF0068744A /* TextView.swift */,
+				92439B2A2406855A0068744A /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		92439B382406A83B0068744A /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				92434E272401526E006B36CC /* LogsView.swift */,
+				92434E2F2402199D006B36CC /* LogView.swift */,
+			);
+			path = Logs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,11 +283,17 @@
 			files = (
 				92434E1724014E87006B36CC /* ContentView.swift in Sources */,
 				92434E282401526E006B36CC /* LogsView.swift in Sources */,
+				92439B322406A7F00068744A /* Log.swift in Sources */,
 				92439B1B24057C030068744A /* main.swift in Sources */,
 				92439B2524058BCF0068744A /* TextView.swift in Sources */,
+				92439B292406846D0068744A /* Color+Log.swift in Sources */,
+				92439B2B2406855A0068744A /* Constants.swift in Sources */,
 				92434E1524014E87006B36CC /* AppDelegate.swift in Sources */,
 				92434E302402199D006B36CC /* LogView.swift in Sources */,
 				92434E2C240157F9006B36CC /* Store.swift in Sources */,
+				92439B342406A7FE0068744A /* File.swift in Sources */,
+				92439B2E2406A7DC0068744A /* LogParser.swift in Sources */,
+				92439B27240684010068744A /* TopBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

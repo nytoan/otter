@@ -13,6 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            TopBar()
             if store.hasLogs {
                 LogsView(logs: store.logs)
             } else {
@@ -34,9 +35,13 @@ struct ContentView: View {
                 Spacer()
                 Button("🗑") {
                     self.store.clearLogs()
-                }.padding()
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                .padding()
             }.frame(maxWidth: .infinity)
-        }.frame(minWidth: 800, minHeight: 500)
+        }
+        .frame(minWidth: 800, minHeight: 500)
+        .background(Color(Constants.Color.background))
     }
 }
 

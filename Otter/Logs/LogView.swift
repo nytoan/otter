@@ -8,43 +8,26 @@
 
 import SwiftUI
 
-extension Color {
-    static func getColorFromLog(log: Log) -> Color {
-        
-        for param in log.params {
-            if case let .color(hexString) = param {
-                let mask = 0x000000FF
-                let scanner = Scanner(string: hexString)
-                var color: UInt64 = 0
-                scanner.scanHexInt64(&color)
-                let r: Double = Double(Int(color >> 16) & mask) / 255.0
-                let g: Double = Double(Int(color >> 8) & mask) / 255.0
-                let b: Double = Double(Int(color) & mask) / 255.0
-                return Color(red: r, green: g, blue: b)                
-            }
-        }
-        
-        return Color(red: 0.1, green: 0.25, blue: 0.35)
-    }
-    
-}
-
 struct LogView: View {
     
     var log: Log
     
-    @State private var isOpen: Bool = false
+    @State var isOpen: Bool = false
     
     var body: some View {
         HStack {
+            Rectangle()
+                .fill(Color.getColorFromLog(log: log))
+                .cornerRadius(2)
+                .frame(width: 6)
             VStack {
                 HStack(alignment: .top) {
                     Text(log.title)
                         .lineLimit(1)
-                        .font(.custom("Arial", size: 12))
+                        .font(Font.system(size: 12, weight: .regular, design: .monospaced))
                     Spacer()
                     Text("\(log.lineCount) lines")
-                        .font(.custom("Arial", size: 11))
+                        .font(.custom("HelveticaNeue-MediumItalic", size: 11))
                 }
                 .frame(minHeight: 30)
                 if isOpen {
@@ -55,7 +38,8 @@ struct LogView: View {
                     }
                     .frame(maxHeight: 300)
                     .padding()
-                    .background(Color(red: 0.1, green: 0.1, blue: 0.15))
+                    .background(Color(Constants.Color.backgroundLog))
+                    .cornerRadius(2)
                 }
             }
             Divider()
@@ -69,9 +53,8 @@ struct LogView: View {
                 }
             }
         }
-        .padding(8)
-        .background(Color.getColorFromLog(log: log))
-        .padding(-2)
+        .padding([.top, .bottom], 4)
+        .background(Color.init(white: 0).opacity(0.01))
         .onTapGesture {
             self.isOpen = !self.isOpen
         }
@@ -80,11 +63,20 @@ struct LogView: View {
 
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
-        LogView(log:
-            Log(
-                id: 0, 
-                text: "[ 200 ] - https://www.efgoisder.com/token"
-            )
-        )
+        Group {
+            LogView(log:
+                Log(
+                    id: 0, 
+                    text: "[ 200 ] - https://www.efgoisder.com/token\nbla bla bla"
+                )
+            ).frame(width: 500, height: 40)
+            LogView(log:
+                Log(
+                    id: 0, 
+                    text: "[ 200 ] - https://www.efgoisder.com/token\nbla bla bla"
+                ),
+                isOpen: true
+            ).frame(width: 500, height: 300)
+        }
     }
 }
