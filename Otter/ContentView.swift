@@ -13,6 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            Text("Otter")
+                .padding([.bottom], 20)
             TopBar(searchString: $store.searchString)
             if store.hasLogs {
                 LogsView(logs: store.logList)

@@ -15,7 +15,6 @@ struct TopBar: View {
     var body: some View {
         VStack {
             Divider()
-                .padding([.top], 16)
             TextField("Search", text: $searchString)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))

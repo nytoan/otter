@@ -25,6 +25,8 @@
 		92439B2E2406A7DC0068744A /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B2D2406A7DC0068744A /* LogParser.swift */; };
 		92439B322406A7F00068744A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B312406A7F00068744A /* Log.swift */; };
 		92439B342406A7FE0068744A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92439B332406A7FE0068744A /* File.swift */; };
+		925A43A12407315200B42955 /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A43A02407315200B42955 /* NSTextField.swift */; };
+		925A43A3240731E900B42955 /* NSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A43A2240731E900B42955 /* NSTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		92439B2D2406A7DC0068744A /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
 		92439B312406A7F00068744A /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		92439B332406A7FE0068744A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		925A43A02407315200B42955 /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
+		925A43A2240731E900B42955 /* NSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				92439B282406846D0068744A /* Color+Log.swift */,
+				925A43A02407315200B42955 /* NSTextField.swift */,
+				925A43A2240731E900B42955 /* NSTableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,7 +296,9 @@
 				92439B2B2406855A0068744A /* Constants.swift in Sources */,
 				92434E1524014E87006B36CC /* AppDelegate.swift in Sources */,
 				92434E302402199D006B36CC /* LogView.swift in Sources */,
+				925A43A3240731E900B42955 /* NSTableView.swift in Sources */,
 				92434E2C240157F9006B36CC /* Store.swift in Sources */,
+				925A43A12407315200B42955 /* NSTextField.swift in Sources */,
 				92439B342406A7FE0068744A /* File.swift in Sources */,
 				92439B2E2406A7DC0068744A /* LogParser.swift in Sources */,
 				92439B27240684010068744A /* TopBar.swift in Sources */,
