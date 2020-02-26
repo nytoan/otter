@@ -13,9 +13,15 @@ struct TopBar: View {
     @Binding var searchString: String
     
     var body: some View {
-        TextField("Search", text: $searchString)
-            .padding()
-            .disableAutocorrection(true)
+        VStack {
+            Divider()
+                .padding([.top], 16)
+            TextField("Search", text: $searchString)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                .disableAutocorrection(true)
+            Divider()
+        }
     }
 }
 
@@ -24,6 +30,6 @@ struct TopBar_Previews: PreviewProvider {
     
     static var previews: some View {
         TopBar(searchString: $test)
-        .frame(width: 200, height: 80)
+        .frame(width: 300, height: 200)
     }
 }

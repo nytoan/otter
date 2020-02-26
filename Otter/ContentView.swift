@@ -12,7 +12,7 @@ struct ContentView: View {
     @ObservedObject var store = Store()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             TopBar(searchString: $store.searchString)
             if store.hasLogs {
                 LogsView(logs: store.logList)
