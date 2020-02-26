@@ -16,6 +16,7 @@ struct LogsView: View {
             LogView(log: log)
         }
     }
+    
 }
 
 struct LogsView_Previews: PreviewProvider {
@@ -35,4 +36,5 @@ struct LogsView_Previews: PreviewProvider {
             )
         ])
     }
+    
 }

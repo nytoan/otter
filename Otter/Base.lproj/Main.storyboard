@@ -39,9 +39,19 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Copy" id="CnE-wy-nt5">
                                     <items>
-                                        <menuItem title="Copy" keyEquivalent="c" id="LWw-rp-4jZ">
+                                        <menuItem title="Select All" keyEquivalent="a" id="LWw-rp-4jZ">
                                             <connections>
-                                                <action selector="copy:" target="Ady-hI-5gd" id="8P3-yU-2Dp"/>
+                                                <action selector="selectAll:" target="Ady-hI-5gd" id="3RE-ag-oLC"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="kA0-1n-gTs">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="ysW-LM-lZn"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="Esu-az-6KG">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="DFp-K8-bMN"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Cut" keyEquivalent="x" id="xuc-yJ-JId">

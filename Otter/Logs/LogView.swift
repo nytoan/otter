@@ -18,8 +18,7 @@ struct LogView: View {
         HStack {
             Rectangle()
                 .fill(Color.getColorFromLog(log: log))
-                .cornerRadius(2)
-                .frame(width: 6)
+                .frame(width: 4)
             VStack {
                 HStack(alignment: .top) {
                     Text(log.title)
@@ -40,6 +39,7 @@ struct LogView: View {
                     .padding()
                     .background(Color(Constants.Color.backgroundLog))
                     .cornerRadius(2)
+                    Spacer()
                 }
             }
             Divider()

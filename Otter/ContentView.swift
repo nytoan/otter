@@ -41,7 +41,6 @@ struct ContentView: View {
             }.frame(maxWidth: .infinity)
         }
         .frame(minWidth: 800, minHeight: 500)
-        .background(Color(Constants.Color.background))
     }
 }
 

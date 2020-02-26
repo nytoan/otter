@@ -24,7 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.center()
         window.titlebarAppearsTransparent = true
         window.isMovableByWindowBackground = true
-        window.backgroundColor = Constants.Color.background
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
