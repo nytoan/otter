@@ -66,14 +66,14 @@ struct LogView_Previews: PreviewProvider {
                     id: 0, 
                     text: "[ 200 ] - https://www.efgoisder.com/token\nbla bla bla"
                 )
-            ).frame(width: 500, height: 100)
+            ).previewLayout(.fixed(width: 500, height: 100))
             LogView(log:
                 Log(
                     id: 0, 
                     text: "[ 200 ] - https://www.efgoisder.com/token\nbla bla bla"
                 ),
                 isOpen: true
-            ).frame(width: 500, height: 500)
+            ).previewLayout(.fixed(width: 500, height: 500))
         }
     }
 }
