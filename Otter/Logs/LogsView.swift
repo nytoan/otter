@@ -13,8 +13,9 @@ struct LogsView: View {
     
     var body: some View {
         List(logs.enumerated().map{$0}, id: \.1.id) { (idx, log) in
-            LogView(log: log).background(idx % 2 == 0 ? Color("backgroundListCell") : Color("backgroundList"))
-        }
+            LogView(log: log)
+                .background(idx % 2 == 0 ? Color("backgroundListCell") : Color("backgroundList"))
+        }.padding(EdgeInsets(top: 0, leading: -10, bottom: 0, trailing: -10))
     }
     
 }

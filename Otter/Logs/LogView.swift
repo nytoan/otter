@@ -53,6 +53,7 @@ struct LogView: View {
             }
         }
         .padding(8)
+        .padding([.trailing], 10)
         .contentShape(Rectangle())
         .onTapGesture {
             self.isOpen = !self.isOpen
