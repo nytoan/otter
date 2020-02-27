@@ -14,6 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text("Otter")
+                .font(Font.system(size: 16, weight: .bold, design: .monospaced))
                 .padding([.bottom], 20)
             TopBar(searchString: $store.searchString)
             if store.hasLogs {
@@ -33,6 +34,7 @@ struct ContentView: View {
                         self.store.chooseFile(url: url)
                     }
                 }
+                .font(Font.system(size: 12, weight: .medium, design: .monospaced))
                 .padding()
                 Spacer()
                 Button("🗑") {

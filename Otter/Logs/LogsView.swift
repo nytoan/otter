@@ -13,7 +13,10 @@ struct LogsView: View {
     
     var body: some View {
         List(logs) { log in
-            LogView(log: log)
+            VStack(spacing: 0) {
+                LogView(log: log)
+                Divider().padding([.top], 8)
+            }
         }
     }
     

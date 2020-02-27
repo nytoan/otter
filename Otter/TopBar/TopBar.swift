@@ -15,9 +15,10 @@ struct TopBar: View {
     var body: some View {
         VStack {
             Divider()
-            TextField("Search", text: $searchString)
+            TextField("🤓 Hey ! Type here to search...", text: $searchString)
+                .font(Font.system(size: 14, weight: .medium, design: .monospaced))
                 .textFieldStyle(PlainTextFieldStyle())
-                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .disableAutocorrection(true)
             Divider()
         }
