@@ -13,7 +13,7 @@ struct LogsView: View {
     
     var body: some View {
         List(logs.enumerated().map{$0}, id: \.1.id) { (idx, log) in
-            LogView(log: log).background(idx % 2 == 0 ? Color("background") : Color.clear)
+            LogView(log: log).background(idx % 2 == 0 ? Color("backgroundListCell") : Color("backgroundList"))
         }
     }
     
