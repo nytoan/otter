@@ -32,7 +32,7 @@ struct LogView: View {
                 .frame(minHeight: 24)
                 if isOpen {
                     ScrollView {
-                        TextView(text: log.content)
+                        TextView(title: log.title, content: log.content)
                             .frame(maxWidth: .infinity)
                     }
                     .frame(maxHeight: 400)
