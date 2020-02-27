@@ -15,22 +15,7 @@ extension NSTableView {
         backgroundColor = Constants.Color.backgroundList
         
         enclosingScrollView?.scrollerInsets = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-    }
-}
-
-extension NSTableCellView {
-    open override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
         
-        
-    }
-}
-
-
-extension NSTableRowView {
-    open override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
-        
-        
+        intercellSpacing = NSSize(width: 0, height: -8)
     }
 }
