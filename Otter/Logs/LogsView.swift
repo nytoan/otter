@@ -12,11 +12,8 @@ struct LogsView: View {
     var logs: [Log]
     
     var body: some View {
-        List(logs) { log in
-            VStack(spacing: 0) {
-                LogView(log: log)
-                Divider().padding([.top], 8)
-            }
+        List(logs.enumerated().map{$0}, id: \.1.id) { (idx, log) in
+            LogView(log: log).background(idx % 2 == 0 ? Color("background") : Color.clear)
         }
     }
     

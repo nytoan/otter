@@ -52,6 +52,7 @@ struct LogView: View {
                 }
             }
         }
+        .padding(8)
         .background(Color.init(white: 0).opacity(0.01))
         .onTapGesture {
             self.isOpen = !self.isOpen
