@@ -26,10 +26,9 @@ class File {
     
     func subscribeToEvents() {
         let fileDescriptor = open(url.path, O_RDONLY)
-        source = DispatchSource.makeFileSystemObjectSource(fileDescriptor: fileDescriptor, eventMask: .all, queue: DispatchQueue.main)
+        source = DispatchSource.makeReadSource(fileDescriptor: fileDescriptor, queue: .main)
         source?.setEventHandler {
             self.read()
-            self.subscribeToEvents()
         }
         source?.resume()
     }
